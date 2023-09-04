@@ -1,13 +1,14 @@
 import {NextResponse} from 'next/server'
 import {createId} from '@paralleldrive/cuid2'
+import {cookies} from 'next/headers'
 
 export async function GET(req: Request) {
-  if (req.headers.get('origin') !== req.headers.get('host')) {
-    return NextResponse.json({error: 'Invalid origin'}, {status: 403})
-  }
+  const applicationId = createId()
+
+  cookies().set('applicationId', applicationId)
 
   return NextResponse.json(
-    {applicationId: createId(), message: 'Your Loan Application has been initiated.'},
+    {applicationId, message: 'Your Loan Application has been initiated.'},
     {status: 200},
   )
 }

@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   }
 
   const body = await req.json()
-  const {name, EstablishedYear, balanceSheet, requestedLoanAmount}: OutcomeBody = body
+  const {name, establishedYear, balanceSheet, requestedLoanAmount}: OutcomeBody = body
 
   const netProfitOrLoss = balanceSheet.reduce((acc: number, curr) => {
     return acc + curr.profitOrLoss
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     JSON.stringify({
       data: {
         name,
-        EstablishedYear,
+        establishedYear,
         outcome,
         preAssessment,
         approvedLoanAmount,

@@ -11,7 +11,7 @@ export type Outcome = {}
 
 export interface OutcomeBody {
   name: string
-  EstablishedYear: number
+  establishedYear: number
   balanceSheet: BalanceSheet
   requestedLoanAmount: number
 }

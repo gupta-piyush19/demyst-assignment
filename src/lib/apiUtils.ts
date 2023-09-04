@@ -2,9 +2,9 @@ export class AccountingSoftware {
   getBalanceSheet() {
     const sheet = []
 
+    const year = Math.floor(Math.random() * 10) + 2010
     for (let month = 1; month <= 12; month++) {
       // Radom year between 2010 and 2020
-      const year = Math.floor(Math.random() * 10) + 2010
 
       // Random profit/loss between -100,000 and 100,000
       const profitOrLoss = Math.floor(Math.random() * 200000) - 100000
