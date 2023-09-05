@@ -1,10 +1,19 @@
-import {BalanceSheet} from '@/types'
+import {BalanceSheet, CompanyDetails} from '@/types'
 import {Button} from './ui/button'
 
 type BalanceSheetProps = {
-  details: any
+  details: CompanyDetails
   balanceSheet: BalanceSheet
   getOutcome: () => void
+}
+
+const nameMapping = {
+  name: 'Name',
+  email: 'Email',
+  businessName: 'Business Name',
+  establishedYear: 'Established Year',
+  loanAmount: 'Loan Amount',
+  accountingProvider: 'Accounting Provider',
 }
 
 export default function BalanceSheet({details, balanceSheet, getOutcome}: BalanceSheetProps) {
@@ -13,7 +22,7 @@ export default function BalanceSheet({details, balanceSheet, getOutcome}: Balanc
       <div className="companyInfo">
         {Object.keys(details).map((key, index) => (
           <div key={index} className="flex justify-between">
-            <span className="text-gray-500">{key}</span>
+            <span className="text-gray-500">{nameMapping[key]}</span>
             <span>{details[key]}</span>
           </div>
         ))}

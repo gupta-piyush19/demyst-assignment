@@ -15,3 +15,12 @@ export interface OutcomeBody {
   balanceSheet: BalanceSheet
   requestedLoanAmount: number
 }
+
+export type CompanyDetails = {
+  name: string
+  email: string
+  businessName: string
+  establishedYear: string
+  loanAmount: string
+  accountingProvider: string
+}
